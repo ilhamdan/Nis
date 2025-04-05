@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Ilham Dani">
+    <title>Dari Ilham Dani</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+
+<body>
+    <div class="bulan"></div>
+
+    <div class="bintang"></div>
+    <div class="bintang"></div>
+    <div class="bintang"></div>
+    <div class="bintang"></div>
+
+
+    <div class="kontainer">
+        <div class="header-content" id="headerContent">
+            <h1 class="judul-romantis">Pesanku 🌙</h1>
+            <h1 class="judul-romantis">Untuk Annisa Fitriani ✨</h1>
+            <p class="pengantar">Ada pesan spesial buat kamu.. 😊</p>
+        </div>
+
+        <div id="langkah1">
+            <div class="tombol-navigasi">
+                <button class="tombol" onclick="langkahBerikutnya(1)">Lanjutkan 👉</button>
+            </div>
+        </div>
+
+        <div id="langkah2" class="tersembunyi">
+            <p class="pengakuan">Aku mau ngomong sesuatu yang penting.. 💬</p>
+            <div class="tombol-navigasi">
+                <button class="tombol tombol-sekunder" onclick="langkahSebelumnya(2)">⬅️ Sebelumnya</button>
+                <button class="tombol" onclick="langkahBerikutnya(2)">Apa itu? 🤔</button>
+            </div>
+        </div>
+
+        <div id="langkah3" class="tersembunyi">
+            <p class="pengakuan">Setiap hari ⏳ aku makin yakin 💪, kebaikan ✨ dan kehangatanmu 🌞 itu nyata 💯. Aku nggak bisa bohong 🚫🤥, kamu selalu ada di pikiran aku 🧠💭. Aku mau banget 🥺 jadi orang yang selalu bisa kamu andalkan 🤝, tempat paling nyaman 🏡💕 buat
+                kamu ❤️.</p>
+            <div class="tombol-navigasi">
+                <button class="tombol tombol-sekunder" onclick="langkahSebelumnya(3)">⬅️ Sebelumnya</button>
+                <button class="tombol" onclick="langkahBerikutnya(3)">Terusin.. 💭</button>
+            </div>
+        </div>
+
+        <div id="langkah4" class="tersembunyi">
+            <p class="pengakuan">Annisa, mau tidak jadi pacar aku? 💖</p>
+            <div class="tombol-navigasi">
+                <button class="tombol tombol-sekunder" onclick="langkahSebelumnya(4)">⬅️ Sebelumnya</button>
+                <button class="tombol" onclick="langkahBerikutnya(4)">Berikan Jawaban 💌</button>
+            </div>
+        </div>
+
+        <div id="langkah5" class="tersembunyi">
+            <p class="pengakuan">Aku sungguh-sungguh💖...</p>
+            <div class="tombol-respons" id="tombolRespons">
+                <button class="tombol" onclick="pilihRespons(true)">Ya, aku mau! 😊</button>
+                <button class="tombol tombol-sekunder" onclick="pilihRespons(false)">Aku butuh waktu ⏳</button>
+            </div>
+            <div class="tombol-navigasi">
+                <button class="tombol tombol-sekunder" onclick="langkahSebelumnya(5)">⬅️ Kembali</button>
+            </div>
+        </div>
+
+        <div id="responsPositif" class="tersembunyi">
+            <p class="pengakuan">💖 Alhamdulillah! 💖</p>
+            <p class="pengakuan">Makasih ya udah terima perasaanku 🥰🤗</p>
+            <button id="tombolWhatsappYa" class="tombol tombol-whatsapp">
+                <i class="fab fa-whatsapp"></i> kirim Pesan di WA
+            </button>
+            <button class="tombol" onclick="ulangiPesan()">Lihat lagi pesannya 🔄</button>
+        </div>
+
+        <div id="responsNetral" class="tersembunyi">
+            <p class="pengakuan">Aku ngerti kok, gak papa 😊</p>
+            <button id="tombolWhatsappTidak" class="tombol tombol-whatsapp">
+                <i class="fab fa-whatsapp"></i> Chat di WA?
+            </button>
+            <button class="tombol" onclick="ulangiPesan()">Baca lagi pesannya 📖</button>
+        </div>
+    </div>
+
+
+    <div class="kredit-pembuat">© 2025 Dibuat oleh Ilham Dani</div>
+    <audio id="bgMusic" loop src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+    <audio id="clickSound" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3"></audio>
+    <audio id="happySound" src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3"></audio>
+    <audio id="thoughtfulSound" src="https://www.bensound.com/bensound-music/bensound-sadday.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

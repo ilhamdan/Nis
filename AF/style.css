@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+body {
+    font-family: 'Nunito', serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ff6b6b, #5f27cd);
+    color: #f5f6fa;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.kontainer {
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    backdrop-filter: blur(5px);
+    margin: 20px 0;
+    animation: muncul 2s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.160);
+    position: relative;
+    z-index: 10;
+}
+
+.judul-romantis {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.pengakuan {
+    font-family: 'Bellefair', serif;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+    margin: 15px 0;
+}
+
+.pengantar {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.tombol {
+    padding: 12px 20px;
+    font-family: 'Montserrat', serif;
+    background: linear-gradient(to right, #e84393, #fd79a8);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 5px;
+    min-width: 150px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(66, 53, 59, 0.4);
+}
+
+#tombolTampilkanRespons {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tombol-respons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 25px auto;
+    gap: 20px;
+}
+
+.tombol-respons button {
+    flex: 1;
+    min-width: 120px;
+    margin: 0;
+    padding: 12px 5px;
+}
+
+.tombol:active {
+    transform: scale(1.05);
+}
+
+.tombol-whatsapp {
+    background: linear-gradient(to right, #25D366, #128C7E);
+}
+
+.tombol-sekunder {
+    background: linear-gradient(to right, #6c5ce7, #a29bfe);
+}
+
+.tersembunyi {
+    display: none;
+}
+
+.kredit-pembuat {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header-content {
+    transition: opacity 0.5s ease;
+}
+
+.bintang {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+    animation: kelip 3s infinite ease-in-out alternate, drift 15s infinite linear;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+
+/* Animasi dasar kelap-kelip */
+
+@keyframes kelip {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+
+/* Animasi gerakan melayang */
+
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(50px, 50px) rotate(360deg);
+    }
+}
+
+
+/* Variasi ukuran dan warna bintang */
+
+.bintang:nth-child(odd) {
+    width: 2px;
+    height: 2px;
+    animation-delay: 0.5s;
+}
+
+.bintang:nth-child(even) {
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    animation-delay: 1s;
+}
+
+.bintang:nth-child(3n) {
+    width: 1px;
+    height: 1px;
+    animation-duration: 4s;
+    background: rgba(255, 215, 0, 0.7);
+}
+
+.bintang:nth-child(5n) {
+    animation-name: kelip, drift-long;
+    animation-duration: 5s, 25s;
+}
+
+
+/* Animasi khusus untuk bintang tertentu */
+
+@keyframes drift-long {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100px, 80px);
+    }
+}
+
+
+/* Animasi Hati */
+
+.hati {
+    position: fixed;
+    font-size: 28px;
+    z-index: 100;
+    pointer-events: none;
+    animation: floatHati 8s linear forwards;
+    opacity: 0.8;
+    will-change: transform, opacity;
+    bottom: 0;
+}
+
+@keyframes floatHati {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.1;
+    }
+    20% {
+        transform: translateY(-20vh) rotate(5deg) scale(1.1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-50vh) rotate(0deg) scale(1.2);
+        opacity: 0.0;
+    }
+    80% {
+        transform: translateY(-80vh) rotate(-5deg) scale(1.3);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(0deg) scale(1.4);
+        opacity: 0;
+    }
+}
+
+.tombol-respons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 90%;
+    width: fit-content;
+}
+
+.tombol-respons button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-sizing: border-box;
+}
+
+.tombol-respons .tombol {
+    background: linear-gradient(to right, #e84393, #fd79a8);
+    color: white;
+    border: none;
+}
+
+.tombol-respons .tombol-sekunder {
+    background: linear-gradient(to right, #6c5ce7, #a29bfe);
+    color: white;
+    border: none;
+}
+
+.tombol-respons button:active {
+    transform: scale(1.05);
+}
+
+@keyframes kelip {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .judul-romantis {
+        font-size: 2rem;
+    }
+    .pengakuan {
+        font-size: 1.3rem;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes denyut {
+    from {
+        box-shadow: 0 0 20px #f5f6fa;
+    }
+    to {
+        box-shadow: 0 0 40px #f5f6fa;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    20% {
+        transform: translateY(-20vh) scale(1.05) rotate(5deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-50vh) scale(1.1) rotate(0deg);
+        opacity: 0.7;
+    }
+    80% {
+        transform: translateY(-80vh) scale(1.15) rotate(-5deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+.hati-animasi {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    animation: float 8s linear forwards;
+    will-change: transform, opacity;
+    bottom: 0;
+}
+
+.hati-static {
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+    animation: kelip 4s infinite ease-in-out;
+    opacity: 0.7;
+}
